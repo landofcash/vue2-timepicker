@@ -1,18 +1,10 @@
 # Vue2 Time Picker
 
-This package is a fork of [vue-timepicker2](https://github.com/phoenixwong/vue2-timepicker). The package by [Phoenix](https://github.com/phoenixwong) hasn't been updates in the last 8 months, and I've been waiting for her to respond to my upstream request for 12 days. The only difference between this package and the original is that you can set Max-Min hours here; otherwise you can use the source repo.
-
 A dropdown time picker (hour|minute|second) for **Vue 2.x**, with flexible time format support.
-
-> Looking for the Vue 1.x version? Please check the [vue-timepicker](https://github.com/phoenixwong/vue-timepicker) *(Vue 1.x supported)*
 
 ## Demo
 
-You can see the **Vue2 Timepicker** in action in the [Demo Page](https://phoenixwong.github.io/vue2-timepicker/)
-
-## Migration
-
-Migrating from the Vue 1.x version? Please check [MIGRATION.md](https://github.com/phoenixwong/vue2-timepicker/blob/master/MIGRATION.md) for basic guidelines.
+You can see the **Vue2 Timepicker** in action in the [Demo Page](https://xxrockonxx.github.io/vue2-timepicker/)
 
 ## Dependencies
 
@@ -23,7 +15,13 @@ Migrating from the Vue 1.x version? Please check [MIGRATION.md](https://github.c
 Through NPM **(Recommended)**
 
 ```bash
-npm install vue2-timepicker-extra --save
+npm install git+https://github.com/xxRockOnxx/vue2-timepicker.git --save-dev
+```
+
+Bower
+
+```bash
+bower install https://github.com/xxRockOnxx/vue2-timepicker.git#master --save-dev
 ```
 
 ## Get Started
@@ -34,10 +32,10 @@ npm install vue2-timepicker-extra --save
 
 ```javascript
 // import
-import VueTimepicker from 'vue2-timepicker-extra'
+import VueTimepicker from 'vue2-timepicker'
 
 // Or, require
-var VueTimepicker = require('vue2-timepicker-extra')
+var VueTimepicker = require('vue2-timepicker')
 
 ```
 
@@ -99,20 +97,20 @@ var yourComponent = new Vue({
 
 VueTimepicker will recognizes the following tokens in the format string
 
-Section    | Token | Output
----------- | ----- | ---------------
-**AM/PM**  | A     | AM PM
-           | a     | am pm
-**Hour**   | H     | 0 1 ... 22 23
-           | HH    | 00 01 ... 22 23
-           | h     | 1 2 ... 11 12
-           | hh    | 01 02 ... 11 12
-           | k     | 1 2 ... 23 24
-           | kk    | 01 02 ... 23 24
-**Minute** | m     | 0 1 ... 58 59
-           | mm    | 00 01 ... 58 59
-**Second** | s     | 0 1 ... 58 59
-           | ss    | 00 01 ... 58 59
+| Section    | Token | Output          |
+| ---------- | ----- | --------------- |
+| **AM/PM**  | A     | AM PM           |
+|            | a     | am pm           |
+| **Hour**   | H     | 0 1 ... 22 23   |
+|            | HH    | 00 01 ... 22 23 |
+|            | h     | 1 2 ... 11 12   |
+|            | hh    | 01 02 ... 11 12 |
+|            | k     | 1 2 ... 23 24   |
+|            | kk    | 01 02 ... 23 24 |
+| **Minute** | m     | 0 1 ... 58 59   |
+|            | mm    | 00 01 ... 58 59 |
+| **Second** | s     | 0 1 ... 58 59   |
+|            | ss    | 00 01 ... 58 59 |
 
 > If not set, `format` string will be default to "HH:mm"
 
@@ -135,12 +133,6 @@ Section    | Token | Output
 
 ```html
 <vue-timepicker hide-clear-button></vue-timepicker>
-```
-
-### Add Minimums and Maximums for the Hours
-
-```html
-<vue-timepicker :hourmin="9" :hourmax="17"></vue-timepicker>
 ```
 
 ### Bind Value with `v-model`
@@ -256,6 +248,8 @@ Prop                  | Type      | Required | Default Value
 **minute-interval**   | _Number_  | no       | _undefined_
 **second-interval**   | _Number_  | no       | _undefined_
 **hide-clear-button** | _Boolean_ | no       | false
+**disabled**          | _Boolean_ | no       | _undefined_
+**disabledValues**    | _Object_  | no       | { hours: [], minute: [], second: [], apm: [] }
 
 ## Contribution
 
