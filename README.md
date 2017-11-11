@@ -15,13 +15,13 @@ You can see the **Vue2 Timepicker** in action in the [Demo Page](https://xxrocko
 Through NPM **(Recommended)**
 
 ```bash
-npm install git+https://github.com/xxRockOnxx/vue2-timepicker.git --save-dev
+npm install git+https://github.com/landofcash/vue2-timepicker.git --save-dev
 ```
 
 Bower
 
 ```bash
-bower install https://github.com/xxRockOnxx/vue2-timepicker.git#master --save-dev
+bower install https://github.com/landofcash/vue2-timepicker.git#master --save-dev
 ```
 
 ## Get Started
@@ -175,68 +175,6 @@ var yourComponent = new Vue({
 // Check the value after that
 console.log(this.yourTimeValue)
 // outputs -> {HH: "14", mm: "30", ss: "15"}
-```
-
-#### **Method 2:** Add `@change` event handler
-
-```html
-<!-- A: No argument -->
-<vue-timepicker :time-value.sync="yourTimeValue" @change="changeHandler"></vue-timepicker>
-
-<!-- B: Custom arguments -->
-<vue-timepicker :time-value.sync="yourTimeValue" @change="otherChangeHandler($event, 'foo', 'bar')"></vue-timepicker>
-```
-
-```javascript
-// A: No argument
-changeHandler (eventData) {
-  console.log(eventData)
-  // -> {data: {HH:..., mm:... }}
-}
-
-// B: Custom arguments
-otherChangeHandler (eventData, yourArg1, yourArg2) {
-  console.log(eventData)
-  // -> {data: {HH:..., mm:... }}
-  console.log(yourArg1)
-  // -> 'foo'
-  console.log(yourArg2)
-  // -> 'bar'
-}
-```
-
-Unlike `v-model`, which only returns the defined time tokens you provided in the binding variable, the `change` event will return **all** supported formats.
-
-In the example above, when picker is set to "14:30:15" in HH:mm:ss format, `change` event will return the following data:
-
-```javascript
-// `@change` event data
-{
-  HH: "14",
-  H: "14",
-  hh: "14",
-  a: "am",
-  A: "AM",
-  h: "14",
-  kk: "14",
-  k: "14",
-  m: "30",
-  mm: "30",
-  s: "15",
-  ss: "15"
-}
-```
-
-Whereas the `v-model` will only return the data with defined tokens
-
-```javascript
-// Previously defined variable (`yourTimeValue` in this case) as {HH:..., mm:..., ss:...}
-// Hence, the `v-model` returns:
-{
-  HH: "14",
-  mm: "30",
-  ss: "15"
-}
 ```
 
 ## Props API
