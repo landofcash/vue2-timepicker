@@ -12,7 +12,7 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './demo/main.js'
+    app: './demo/src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
