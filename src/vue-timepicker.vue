@@ -248,7 +248,7 @@
                 v-text="hr"
                 v-show="disabledValues.hour.indexOf(hr) === -1"
                 :class="{active: value[hourType] === hr}"
-                @click.stop="onHourSelect(hr)"></li>
+                @click.stop="onHourSelect(String(hr))"></li>
       </ul>
       <ul class="minutes">
         <li class="hint" v-text="minuteType"></li>
@@ -257,7 +257,7 @@
                 v-text="m"
                 v-show="disabledValues.minute.indexOf(m) === -1"
                 :class="{active: value[minuteType] === m}"
-                @click.stop="onMinuteSelect(m)"></li>
+                @click.stop="onMinuteSelect(String(m))"></li>
       </ul>
       <ul class="seconds" v-if="secondType">
         <li class="hint" v-text="secondType"></li>
@@ -266,7 +266,7 @@
                 v-text="s"
                 v-show="disabledValues.second.indexOf(s) === -1"
                 :class="{active: value[secondType] === s}"
-                @click.stop="onSecondSelect(s)"></li>
+                @click.stop="onSecondSelect(String(s))"></li>
       </ul>
       <ul class="apms" v-if="apmType">
         <li class="hint" v-text="apmType"></li>
